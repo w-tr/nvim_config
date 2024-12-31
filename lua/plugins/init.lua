@@ -13,6 +13,24 @@ return {
     end,
   },
 
+  {
+    "plasticboy/vim-markdown",
+    ft = { "markdown" },
+    config = function()
+      -- Optional configuration
+      -- vim.g.vim_markdown_folding_disabled = 1 -- Disable folding
+      -- vim.g.vim_markdown_conceal = 0          -- Disable conceal
+      vim.g.vim_markdown_math = 1             -- Enable math support
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown" }, -- Load only for Markdown files
+    build = "cd app && npm install", -- Install dependencies
+    config = function()
+      vim.g.mkdp_auto_start = 1 -- Auto start preview when opening Markdown files
+    end,
+  },
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
