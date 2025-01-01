@@ -14,4 +14,12 @@ M.base46 = {
 	},
 }
 
+M.ui = {
+  statusline = {
+    modules = {
+      cursor = "%#StText# %l:%c "
+    }
+  },
+}
+
 return M
