@@ -10,6 +10,9 @@ local servers = {
   html = {},
   awk_ls = {},
   bashls = {},
+  -- Lesson learnt - Formatters aren't language servers.
+  --               - However you can connect to lsps.
+  -- shfmt = {},
   lua_ls = {},
   ruff= {},
   rust_analyzer = {

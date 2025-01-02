@@ -1,6 +1,8 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
+    zsh = { "beautysh" },
+    sh = { "beautysh" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
