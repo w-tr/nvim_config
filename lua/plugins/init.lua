@@ -29,13 +29,17 @@ return {
       vim.g.mkdp_auto_start = 1 -- Auto start preview when opening Markdown files
     end,
   },
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("configs.chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      -- "folke/trouble.nvim", -- optional
+      "nvim-telescope/telescope.nvim",
+    },
+  },
 }

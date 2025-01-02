@@ -20,21 +20,23 @@ end, { desc = "General format file" })
 unmap("n", "<leader>ma")
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "Telescope find marks" })
 
--- TODO
--- FIXME
---
--- TODO: Lets add something to the telescope git stuff.
--- unmap("n", "<leader>gt")
--- unmap("n", "<leader>pt")
---
--- TODO: Git stuff which expands on gitsigns
--- goto next hunk etc
---
--- M.gitsigns = {
-  -- plugin = true,
--- --j
---
--- map("n", ";", ":", { desc = "CMD enter command mode" })
--- map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- TODO - Understand existing commands
+--  1. Telescope keymaps returns 120 instances
+--  2. Which key returns x
+--
+-- TODO - Add funct to chatGPT
+-- It turns out the chatgpt dialog popup window doesn't have nvchad j mapping, which is to say
+-- j = gj when line is wrapped.
+--
+--
+--
+-- TODO: Add git stuff,
+-- 1. Telescope has git stuff.
+--     unmap("n", "<leader>gt")
+--     unmap("n", "<leader>pt")
+-- 2. Gitsigns has git stuff.
+--     goto next hunk etc
+--     M.gitsigns = {
+--       plugin = true,
+--
