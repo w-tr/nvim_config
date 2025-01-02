@@ -20,6 +20,9 @@ end, { desc = "General format file" })
 unmap("n", "<leader>ma")
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "Telescope find marks" })
 
+-- TODO
+-- FIXME
+--
 -- TODO: Lets add something to the telescope git stuff.
 -- unmap("n", "<leader>gt")
 -- unmap("n", "<leader>pt")
@@ -27,6 +30,8 @@ map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "Telescope find mark
 -- TODO: Git stuff which expands on gitsigns
 -- goto next hunk etc
 --
+-- M.gitsigns = {
+  -- plugin = true,
 -- --j
 --
 -- map("n", ";", ":", { desc = "CMD enter command mode" })

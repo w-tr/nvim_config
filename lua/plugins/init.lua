@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    -- event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -18,9 +18,7 @@ return {
     ft = { "markdown" },
     config = function()
       -- Optional configuration
-      -- vim.g.vim_markdown_folding_disabled = 1 -- Disable folding
-      -- vim.g.vim_markdown_conceal = 0          -- Disable conceal
-      vim.g.vim_markdown_math = 1             -- Enable math support
+      vim.g.vim_markdown_math = 1 -- Enable math support
     end,
   },
   {

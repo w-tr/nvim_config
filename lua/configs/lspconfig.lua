@@ -11,6 +11,20 @@ local servers = {
   awk_ls = {},
   bashls = {},
   lua_ls = {},
+  ruff= {},
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          allFeatures = true,
+        },
+        checkOnSave = {
+          command = "clippy",
+        },
+      },
+    },
+  },
+
 
   pyright = {
     settings = {
