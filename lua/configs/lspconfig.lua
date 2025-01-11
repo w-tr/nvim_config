@@ -14,7 +14,8 @@ local servers = {
   --               - However you can connect to lsps.
   -- shfmt = {},
   lua_ls = {},
-  ruff= {},
+  ruff = {},
+  -- debugpy = {}, -- Dap, installed manually.
   rust_analyzer = {
     settings = {
       ["rust-analyzer"] = {
@@ -27,7 +28,6 @@ local servers = {
       },
     },
   },
-
 
   pyright = {
     settings = {

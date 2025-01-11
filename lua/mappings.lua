@@ -20,6 +20,12 @@ end, { desc = "General format file" })
 unmap("n", "<leader>ma")
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "Telescope find marks" })
 
+-- Is there a way to only add these if i'm in a buffer
+-- that allows dap? Atm only python?
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Debug Breakpoint toggle" })
+map("n", "<leader>drp", function()
+  require("dap-python").test_method()
+end, { desc = "Dap Run Python" })
 
 -- TODO - Understand existing commands
 --  1. Telescope keymaps returns 120 instances

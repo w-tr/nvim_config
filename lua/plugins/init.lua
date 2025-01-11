@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = {"BufWritePre"}, -- uncomment for format on save
+    event = { "BufWritePre" }, -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -40,6 +40,74 @@ return {
       "nvim-lua/plenary.nvim",
       -- "folke/trouble.nvim", -- optional
       "nvim-telescope/telescope.nvim",
+    },
+  },
+  -- Add debugger plugins
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap", -- Already inc above.
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      -- ~~~~~? Review from here
+      -- dap.listeners.before.event_terminated["dapui_config"] = function()
+      --   dapui.close()
+      -- end
+      -- dap.listeners.before.event_exited["dapui_config"] = function()
+      --   dapui.close()
+      -- end
+      dap.listeners.after.event_terminated["keep-session"] = function()
+        print "Program ended, keeping session alive"
+      end
+      dap.adapters.python = {
+        type = "executable",
+        command = "python",
+        args = { "-m", "debugpy.adapter" },
+      }
+      dap.configurations.python = {
+        type = "python",
+        request = "launch",
+        name = "Launch File",
+        program = "${file}",
+        console = "integratedTerminal",
+        stopOnEntry = false,
+      }
+      -- ~~~~~? Review to here
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "python",
+      },
     },
   },
 }
