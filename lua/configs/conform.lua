@@ -6,6 +6,11 @@ local options = {
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
+  format_on_save = {
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 1000,
+  },
 
   -- format_on_save = {
   --   -- These options will be passed to conform.format()
