@@ -110,4 +110,18 @@ return {
       },
     },
   },
+  {
+    "hrsh7th/nvim-cmp", -- Specify the plugin to override
+    opts = function(_, opts)
+      local cmp = require "cmp"
+      -- opts.mapping["<C-y"] = cmp.mapping.confirm { select = true }
+      opts.mapping = cmp.mapping.preset.insert {
+        ["<C-y>"] = cmp.mapping.confirm { select = false },
+      }
+      opts.mapping = cmp.mapping.preset.cmdline {
+        ["<C-y>"] = cmp.mapping.confirm { select = false },
+      }
+      return opts
+    end,
+  },
 }
