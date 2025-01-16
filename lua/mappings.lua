@@ -26,6 +26,7 @@ map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Debug Breakpoin
 map("n", "<leader>drp", function()
   require("dap-python").test_method()
 end, { desc = "Dap Run Python" })
+map("n", "<leader>drr", "<cmd> DapContinue <CR>", { desc = "Debug Run Run (Con)" })
 
 -- TODO - Understand existing commands
 --  1. Telescope keymaps returns 120 instances

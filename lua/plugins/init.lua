@@ -1,5 +1,28 @@
 return {
   {
+    -- Sometimes, we just need to make sure that
+    -- our programming lanaguages are present and accounted for.
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "clang-format",
+        "codelldb",
+      },
+    },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+    },
+  },
+  {
     "stevearc/conform.nvim",
     event = { "BufWritePre" }, -- uncomment for format on save
     opts = require "configs.conform",
@@ -60,6 +83,7 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
@@ -107,6 +131,8 @@ return {
         "html",
         "css",
         "python",
+        "c",
+        "cpp",
       },
     },
   },

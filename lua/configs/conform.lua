@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     zsh = { "beautysh" },
     sh = { "beautysh" },
+    cpp = { "clang-format" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },

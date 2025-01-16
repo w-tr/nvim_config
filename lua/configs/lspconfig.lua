@@ -39,6 +39,7 @@ local servers = {
       },
     },
   },
+  clangd = {},
 }
 
 for name, opts in pairs(servers) do
